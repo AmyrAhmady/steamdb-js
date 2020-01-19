@@ -1,6 +1,6 @@
 {
   "name": "steamdb-js",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "a library that provides JSON data by scraping steamdb website to get steam games information",
   "main": "index.js",
   "scripts": {

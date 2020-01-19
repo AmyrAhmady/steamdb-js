@@ -28,20 +28,20 @@ main();
 
 ### Output (JSON):
 ```json
- {
-    id: 271590,
-    type: "Game",
-    name: "Grand Theft Auto V",
-    developer: "Rockstar North",
-    publisher: "Rockstar Games",
-    os: [
+{
+    "id": 271590,
+    "type": "Game",
+    "name": "Grand Theft Auto V",
+    "developer": "Rockstar North",
+    "publisher": "Rockstar Games",
+    "os": [
         "Windows"
     ],
-    lastUpdate: 1578987453000,
-    releaseDate: 1428966000000,
-    description:
+    "lastUpdate": 1578987453000,
+    "releaseDate": 1428966000000,
+    "description":
         "Grand Theft Auto V for PC offers players the option to explore the award-winning world of Los Santos and Blaine County in resolutions of up to 4k and beyond, as well as the chance to experience the game running at 60 frames per second.",
-    logoUrl:
+    "logoUrl":
         "https://steamcdn-a.akamaihd.net/steam/apps/271590/header.jpg?t=1578987453"
 }
 ```
