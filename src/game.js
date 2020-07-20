@@ -19,7 +19,8 @@ export default class Game {
             {
                 headers: {
                     "Accept-language": "en-US,en;q=0.5",
-                    "Cookie": "__Host-cc=" + this._userRegion
+                    "Cookie": "__Host-cc=" + this._userRegion,
+                    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:78.0) Gecko/20100101 Firefox/78.0"
                 },
             });
         this._gamePageData = cheerio.load(result.data);

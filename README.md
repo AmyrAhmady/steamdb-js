@@ -3,6 +3,10 @@
 *a library to get information, prices from all regions, and screenshots of a game as JSON data*
 
 ## Installation
+
+```
+npm i --save esm
+```
 ```
 npm i --save steamdb-js
 ```
@@ -24,6 +28,11 @@ async function main() {
 }
 
 main();
+```
+
+Don't forget to start your script with
+```
+node -r esm ./index.js
 ```
 
 ### Output (JSON):
