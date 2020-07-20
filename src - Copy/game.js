@@ -1,7 +1,7 @@
-import axios from "axios";
-import cheerio from "cheerio";
+const axios = require("axios");
+const cheerio = require("cheerio");
 
-export default class Game {
+class Game {
     constructor(gameid, region = "us") {
         this._gameId = gameid;
         this._userRegion = region.toString();
@@ -125,3 +125,5 @@ export default class Game {
         return screenshots;
     }
 }
+
+module.exports = Game;
