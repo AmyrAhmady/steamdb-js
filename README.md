@@ -14,7 +14,7 @@ yarn add steamdb-js
 
 ## Usage/Example (CommonJS):
 ```js
-import { Game } from "steamdb-js";
+const { Game } = require("steamdb-js");
 
 async function main() {
     const game = new Game(271590);
