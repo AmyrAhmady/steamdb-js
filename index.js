@@ -1,3 +1,3 @@
-import Game from "./src/game.js";
+const Game = require("./src/game.js");
 
-export { Game };
+module.exports = { Game };

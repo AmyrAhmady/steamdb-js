@@ -5,9 +5,6 @@
 ## Installation
 
 ```
-npm i --save esm
-```
-```
 npm i --save steamdb-js
 ```
 or if you are using yarn:
@@ -15,7 +12,7 @@ or if you are using yarn:
 yarn add steamdb-js
 ```
 
-## Usage/Example:
+## Usage/Example (CommonJS):
 ```js
 import { Game } from "steamdb-js";
 
@@ -30,9 +27,19 @@ async function main() {
 main();
 ```
 
-Don't forget to start your script with
-```
-node -r esm ./index.js
+## Usage/Example (+ES5):
+```js
+import { Game } from "steamdb-js";
+
+async function main() {
+    const game = new Game(271590);
+    await game.fetchData();
+    const data = await game.parse();
+    //console.log(data); // This prints out all parsed data, you can use it for easier in-code usage
+    console.log(game.getGameInfo());
+}
+
+main();
 ```
 
 ### Output (JSON):
