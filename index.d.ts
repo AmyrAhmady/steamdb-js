@@ -52,4 +52,50 @@ export class Game {
     getGameInfo(): { name: string, id: number, type: string, description: string, developer: string, publisher: string, lastUpdate: number, releaseDate: number, logoUrl: string };
 }
 
+export class Depot {
+    /**
+     * region is optional and default value is set to `us`
+     */
+   constructor(depotid: number, region?: string);
+   /**
+    * fetch depot data from steamdb.info website using passed depotid in constructor
+    */
+   fetchData(): void;
+   /**
+    * pase all already-fetched data (must be used after calling `fetchData`)
+    * @return return value is an object with all parsed data
+    */
+   parse(): object;
+   /**
+    * export build id of depot
+    * @Note must be used after `parse()`
+    * @return build id
+    */
+   getBuildId(): string;
+   /**
+    * export manifest id of depot
+    * @Note must be used after `parse()`
+    * @return manifest id
+    */
+   getManifestId(): string;
+   /**
+    * export depot size on disk
+    * @Note must be used after `parse()`
+    * @return depot size on disk
+    */
+   getSize(): string;
+   /**
+    * export download size
+    * @Note must be used after `parse()`
+    * @return depot download size
+    */
+   getDownloadSize(): string;
+   /**
+    * export full depot information
+    * @Note must be used after `parse()`
+    * @return depot info
+    */
+   getDepotInfo(): { id: string, buildId: string, manifestId: string, creationDate: number, lastUpdate: number, size: string, downloadSize: string };
+}
+
 declare module 'steamdb-js';
