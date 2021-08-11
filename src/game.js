@@ -66,7 +66,7 @@ class Game {
 
     async _parseGameInformation(pageData) {
         let gameInfo = {};
-        
+
         gameInfo.name = await pageData('h1[itemprop="name"]').text();
 
         await pageData('.table-dark > tbody > tr').each((_, element) => {
@@ -78,10 +78,10 @@ class Game {
                 gameInfo.type = pageData(tableInfo[1]).text();
             }
             else if (pageData(tableInfo[0]).text() == "Developer") {
-                gameInfo.developer = pageData(tableInfo[1]).text();
+                gameInfo.developer = pageData(tableInfo[1]).text().trim();
             }
             else if (pageData(tableInfo[0]).text() == "Publisher") {
-                gameInfo.publisher = pageData(tableInfo[1]).text();
+                gameInfo.publisher = pageData(tableInfo[1]).text().trim();
             }
             else if (pageData(tableInfo[0]).text() == "Last Record Update") {
                 let time = new Date(pageData(tableInfo[1]).find("time").attr("datetime"));
