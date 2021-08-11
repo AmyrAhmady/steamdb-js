@@ -66,6 +66,9 @@ class Game {
 
     async _parseGameInformation(pageData) {
         let gameInfo = {};
+        
+        gameInfo.name = await pageData('h1[itemprop="name"]').text();
+
         await pageData('.table-dark > tbody > tr').each((_, element) => {
             let tableInfo = pageData(element).find('td').toArray();
             if (pageData(tableInfo[0]).text() == "App ID") {
@@ -83,9 +86,6 @@ class Game {
             else if (pageData(tableInfo[0]).text() == "Last Record Update") {
                 let time = new Date(pageData(tableInfo[1]).find("time").attr("datetime"));
                 gameInfo.lastUpdate = time.getTime();
-            }
-            else if (pageData(tableInfo[0]).text() == "Name") {
-                gameInfo.name = pageData(tableInfo[1]).text();
             }
             else if (pageData(tableInfo[0]).text() == "Release Date") {
                 let time = new Date(pageData(tableInfo[1]).find("time").attr("datetime"));

@@ -58,6 +58,9 @@ class Depot {
 
     async _parseDepotInformation(pageData) {
         let depotInfo = {};
+
+        depotInfo.name = await pageData('h1').text();
+
         await pageData('.table-hover > tbody > tr').each((_, element) => {
             let tableInfo = pageData(element).find('td').toArray();
             if (pageData(tableInfo[0]).text() == "Depot ID") {
