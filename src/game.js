@@ -81,14 +81,14 @@ class Game {
                 gameInfo.publisher = pageData(tableInfo[1]).text();
             }
             else if (pageData(tableInfo[0]).text() == "Last Record Update") {
-                let time = new Date(pageData(tableInfo[1]).find("span").attr("title"));
+                let time = new Date(pageData(tableInfo[1]).find("time").attr("datetime"));
                 gameInfo.lastUpdate = time.getTime();
             }
             else if (pageData(tableInfo[0]).text() == "Name") {
                 gameInfo.name = pageData(tableInfo[1]).text();
             }
             else if (pageData(tableInfo[0]).text() == "Release Date") {
-                let time = new Date(pageData(tableInfo[1]).find("span").attr("title"));
+                let time = new Date(pageData(tableInfo[1]).find("time").attr("datetime"));
                 gameInfo.releaseDate = time.getTime();
             }
             else if (pageData(tableInfo[0]).text() == "Supported Systems") {

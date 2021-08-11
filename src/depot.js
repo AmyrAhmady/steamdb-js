@@ -70,13 +70,11 @@ class Depot {
                 depotInfo.manifestId = Number(pageData(tableInfo[1]).text());
             }
             else if (pageData(tableInfo[0]).text() == "Creation date") {
-                let rawTime = pageData(tableInfo[1]).text().replace("()", " ").trim().split(' – ');
-                let time = new Date(rawTime[0] + ' ' + rawTime[1]);
+                let time = new Date(pageData(tableInfo[1]).find('time').attr('datetime'));
                 depotInfo.creationDate = time.getTime();
             }
             else if (pageData(tableInfo[0]).text() == "Last update") {
-                let rawTime = pageData(tableInfo[1]).text().replace("()", " ").trim().split(' – ');
-                let time = new Date(rawTime[0] + ' ' + rawTime[1]);
+                let time = new Date(pageData(tableInfo[1]).find('time').attr('datetime'));
                 depotInfo.lastUpdate = time.getTime();
             }
             else if (pageData(tableInfo[0]).text() == "Size on disk") {
