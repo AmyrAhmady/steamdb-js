@@ -95,7 +95,7 @@ export class Depot {
     * @Note must be used after `parse()`
     * @return depot info
     */
-   getDepotInfo(): { id: string, buildId: string, manifestId: string, creationDate: number, lastUpdate: number, size: string, downloadSize: string };
+   getDepotInfo(): { name: string, id: string, buildId: string, manifestId: string, creationDate: number, lastUpdate: number, size: string, downloadSize: string };
 }
 
 declare module 'steamdb-js';
